@@ -1,0 +1,557 @@
+{
+	"info": {
+		"_postman_id": "29c5b219-e102-43a0-ab59-73b8cdfd232d",
+		"name": "datadragon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "signin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"{{email}}\",\n\t\"password\": \"{{password}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/users/signin",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signup",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "apikey",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "query",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"{{userName}}\",\n\t\"email\": \"{{email}}\",\n\t\"password\": \"{{password}}\",\n\t\"confirmedPassword\": \"{{password}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/users/signup",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signout",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/users/session",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"session"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "session",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/users/session",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"session"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "credentials",
+			"item": [
+				{
+					"name": "get user credentials",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/credentials",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"credentials"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create credential",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"target\": \"google_ads\",\n\t\"name\": \"Test3\",\n\t\"credential\": {\n\t\t\"test\": \"x\"\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/credentials",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"credentials"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete credential",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/credentials/{{credentialPath}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"credentials",
+								"{{credentialPath}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "channels",
+			"item": [
+				{
+					"name": "campaigns",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/campaigns/{{account}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"campaigns",
+								"{{account}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "adgroups",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/adgroups/{{account}}/{{orgID}}/{{campaignID}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"adgroups",
+								"{{account}}",
+								"{{orgID}}",
+								"{{campaignID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "notifications",
+			"item": [
+				{
+					"name": "search",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"startDate\": \"2020-02-17T22:10:55.653Z\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/notifications/search",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"notifications",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "count",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"startDate\": \"2020-02-17T22:10:55.653Z\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/notifications/search",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"notifications",
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "rules",
+			"item": [
+				{
+					"name": "history",
+					"item": [
+						{
+							"name": "rule history",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/rules/history/{{ruleID}}",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"rules",
+										"history",
+										"{{ruleID}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "rules",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/rules",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"rules"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "iomap",
+			"item": [
+				{
+					"name": "report",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"columns\": [\n\t\t\"account.id\",\n\t\t\"campaign.id\",\n\t\t\"campaign.name\"\n\t\t],\n\t\"credentials\": {\n\t\t\"heathcliff/IOAppleSearchAdsReporter\": \"CREDENTIAL\"\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/iomap/report",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"iomap",
+								"report"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "in",
+				"value": "query",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "apikey",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "{{apiKey}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "20fcaa26-4469-486f-9785-77d1f775fdcf",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "df3d559f-dfc9-4f9d-8145-1d8b272f3664",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "70d410b8-56b0-4bce-90ac-fcd8f5daaa9e",
+			"key": "baseURL",
+			"value": "BASE_URL",
+			"type": "string"
+		},
+		{
+			"id": "0422e200-659f-455b-969d-45645965e44f",
+			"key": "email",
+			"value": "EMAIL",
+			"type": "string"
+		},
+		{
+			"id": "04c48fac-5b27-495f-8798-b1ca41327cba",
+			"key": "password",
+			"value": "PASSWORD",
+			"type": "string"
+		},
+		{
+			"id": "f6b21e1a-0c89-4514-bd60-84f28bcaaaf5",
+			"key": "userName",
+			"value": "USERNAME",
+			"type": "string"
+		},
+		{
+			"id": "b71d497e-6fad-43e8-a5b1-89b776711d82",
+			"key": "apiKey",
+			"value": "API_KEY",
+			"type": "string"
+		},
+		{
+			"id": "43c0f290-8fe3-4636-929d-9ad1829b6f28",
+			"key": "credentialPath",
+			"value": "CREDENTIAL_PATH",
+			"type": "string"
+		},
+		{
+			"id": "6ef95707-66cd-4f8d-a024-11341e886bce",
+			"key": "account",
+			"value": "ACCOUNT",
+			"type": "string"
+		},
+		{
+			"id": "0c1135ae-f800-4f78-be6d-1afcf57a77e7",
+			"key": "orgID",
+			"value": "ORG_ID",
+			"type": "string"
+		},
+		{
+			"id": "fb78fb24-9f95-46e4-8dbf-229898fcae67",
+			"key": "campaignID",
+			"value": "CAMPAIGN_ID",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

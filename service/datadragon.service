@@ -1,0 +1,14 @@
+[Unit]
+Description=DataDragon
+Wants=network-online.target mongodb.service
+After=network-online.target mongodb.service
+
+[Service]
+WorkingDirectory=/absolute/path/to/project/root
+Restart=always
+ExecStart=/usr/bin/npm start
+User=projectuser
+Group=projectgroup
+
+[Install]
+WantedBy=multi-user.target

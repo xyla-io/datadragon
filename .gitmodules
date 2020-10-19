@@ -1,0 +1,39 @@
+[submodule "python/development_packages/regla"]
+	path = python/development_packages/regla
+	url = git@github.com:xyla-io/regla.git
+[submodule "python/cheshire"]
+	path = python/cheshire
+	url = git@github.com:gklei/cheshire.git
+[submodule "python/development_packages/hazel"]
+	path = python/development_packages/hazel
+	url = git@github.com:xyla-io/hazel.git
+[submodule "angular-datadragon"]
+	path = angular-datadragon
+	url = git@github.com:xyla-io/datadragon_ux.git
+[submodule "python/development_packages/moda"]
+	path = python/development_packages/moda
+	url = git@github.com:xyla-io/moda.git
+[submodule "python/development_packages/heathcliff"]
+	path = python/development_packages/heathcliff
+	url = git@github.com:xyla-io/heathcliff.git
+[submodule "python/development_packages/data_layer"]
+	path = python/development_packages/data_layer
+	url = git@github.com:xyla-io/data_layer.git
+[submodule "python/development_packages/fabrica"]
+	path = python/development_packages/fabrica
+	url = git@github.com:xyla-io/fabrica.git
+[submodule "python/development_packages/subir"]
+	path = python/development_packages/subir
+	url = git@github.com:xyla-io/subir.git
+[submodule "python/development_packages/azrael"]
+	path = python/development_packages/azrael
+	url = git@github.com:xyla-io/azrael.git
+[submodule "python/development_packages/io_fetch_channel"]
+	path = python/development_packages/io_fetch_channel
+	url = git@github.com:xyla-io/io_fetch_channel.git
+[submodule "python/development_packages/io_map"]
+	path = python/development_packages/io_map
+	url = git@github.com:xyla-io/io_map.git
+[submodule "python/development_packages/io_channel"]
+	path = python/development_packages/io_channel
+	url = git@github.com:xyla-io/io_channel.git

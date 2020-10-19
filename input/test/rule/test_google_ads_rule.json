@@ -1,0 +1,51 @@
+{
+  "account": "TESTCREDENTIALPATH",
+  "adgroupID": null,
+  "campaignID": 123,
+  "channel": "google_ads",
+  "created": "2020-01-01T00:00:00.000Z",
+  "dataCheckRange": 2592000000,
+  "granularity": "HOURLY",
+  "isEnabled": false,
+  "lastRun": null,
+  "lastTriggered": null,
+  "metadata": {
+    "accountName": "TESTACCOUNTNAME",
+    "actionDescription": "Spend > $0 → ☟ Campaign 🎯 CPA 2% ⇥ $0",
+    "adGroupName": "All",
+    "campaignName": "TESTCAMPAIGNNAME",
+    "description": "TESTACCOUNTNAME (456) → TESTCAMPAIGNNAME → All | Spend > $0 → ☟ Campaign 🎯 CPA 2% ⇥ $0 (every 1 hr review 720 hr)",
+    "title": null
+  },
+  "modified": "2020-01-01T00:00:00.000Z",
+  "options": {},
+  "orgID": 456,
+  "runInterval": 3600000,
+  "safeMode": true,
+  "shouldMonitor": false,
+  "shouldPerformAction": true,
+  "shouldSendEmail": false,
+  "tasks": [
+    {
+      "actions": [
+        {
+          "action": "dec_cpa_goal_campaign",
+          "adjustmentLimit": 0,
+          "adjustmentValue": 2
+        }
+      ],
+      "conditionGroup": {
+        "conditions": [
+          {
+            "metric": "totalSpend",
+            "metricValue": 0,
+            "operator": "greater"
+          }
+        ],
+        "operator": "all",
+        "subgroups": []
+      }
+    }
+  ],
+  "user": "MONGOUSEROBJECTID"
+}

@@ -1,0 +1,23 @@
+# search_ads
+python-decouple
+pandas
+requests
+tqdm
+pymongo
+
+# cheshire
+python-decouple
+pandas
+requests
+tqdm
+fire
+ratelimit
+
+# scripts
+pytest
+
+# linter
+pylint
+
+# pendulum 2.1.1 fails to install without wheel
+pendulum==2.1.0

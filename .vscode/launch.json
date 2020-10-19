@@ -1,0 +1,165 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "program": "${workspaceFolder}/app.js",
+      "args": [
+        "3300",
+        "localhost",
+        "false",
+        "http://localhost:4300"
+      ],
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Command",
+      "console": "integratedTerminal",
+      "program": "${workspaceFolder}/run",
+      "args": [
+        "python:run",
+        "[{\"command\": \"fetch\", \"targets\": {\"credentials.heathcliff/IOAppleSearchAdsReporter\": \"\"}}, {\"command\": \"report\", \"columns\": [\"campaign.id\", \"campaign.name\"], \"filters\": {}, \"options\": {}, \"credentials\": {}}]",
+        "-t", "0.targets.credentials\\.heathcliff/IOAppleSearchAdsReporter",
+        "-f", "credential://CREDENTIAL",
+        "-g", "1.result.report",
+        "--parse-csv", "-p"
+      ],
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "name": "Python: Rule",
+      "type": "python",
+      "request": "launch",
+      "justMyCode": false,
+      "program": "${workspaceFolder}/datadragon_api.py",
+      "console": "internalConsole",
+      "args": [
+        "{\"dbConfig\":{\"databaseURL\":\"mongodb://localhost:27017/datadragon\",\"database\":\"datadragon\",\"rulesCollection\":\"rules\",\"rulesHistoryCollection\":\"rulesHistory\",\"rulesMonitorCollection\":\"rulesMonitor\",\"ruleConditionGroupsCollection\":\"ruleConditionGroups\"},\"credentials\":{\"org_name\":\"CREDENTIALOBJECTID\",\"pem\":\"PEMPATH\",\"key\":\"KEYPATH\"},\"orgName\":\"CREDENTIAL\",\"ruleID\":\"RULEOBJECTID\",\"startDate\":\"2020-02-01\",\"endDate\":\"2020-06-01\",\"granularity\":\"MONTHLY\",\"command\":\"execute_rule\"}"
+      ]
+    },
+    {
+      "name": "Python: Impact Report",
+      "type": "python",
+      "request": "launch",
+      "justMyCode": false,
+      "program": "${workspaceFolder}/datadragon_api.py",
+      "console": "internalConsole",
+      "args": [
+        "{\"reportID\":\"REPORTID\",\"ruleID\":\"RULEID\",\"orgName\":\"ORGNAME\",\"credentials\":{\"customer_id\":\"CUSTOMERID\",\"login_customer_id\":\"LOGINCUSTOMERID\",\"refresh_token\":\"REFRESHTOKEN\",\"client_secret\":\"CLIENTSECRET\",\"client_id\":\"CLIENTID\",\"developer_token\":\"DEVELOPERTOKEN\"},\"dbConfig\":{\"databaseURL\":\"mongodb://localhost:27017/datadragon\",\"database\":\"datadragon\",\"rulesCollection\":\"rules\",\"rulesHistoryCollection\":\"rulesHistory\",\"rulesMonitorCollection\":\"rulesMonitor\",\"ruleConditionGroupsCollection\":\"ruleConditionGroups\"},\"command\":\"impact_report\"}"
+      ]
+    },
+    {
+      "name": "Python: Channel Report",
+      "type": "python",
+      "request": "launch",
+      "justMyCode": false,
+      "program": "${workspaceFolder}/datadragon_api.py",
+      "console": "internalConsole",
+      "args": [
+        "{\"credentials\":{\"client_secret\":\"CLIENTSECRET\",\"ad_account_id\":\"ADACCOUNTID\",\"client_id\":\"CLIENTID\",\"refresh_token\":\"REFRESHTOKEN\"},\"channel\":\"snapchat\",\"time_granularity\":\"hourly\",\"entity_granularity\":\"campaign\",\"start\":1587600000.000,\"end\":1587700000.000,\"command\":\"channel_report\"}"
+      ]
+    },
+    {
+      "name": "Python: Report",
+      "type": "python",
+      "request": "launch",
+      "justMyCode": false,
+      "program": "${workspaceFolder}/datadragon_api.py",
+      "console": "internalConsole",
+      "args": [
+        "{\"command\":\"report\",\"columns\":[\"campaign.id\",\"campaign.name\",\"campaign.daily_budget\"],\"filters\":{},\"options\":{},\"credentials\":{\"heathcliff/IOAppleSearchAdsReporter\":{\"org_name\":\"CREDENTIALOBJECTID\",\"pem\":\"PEMPATH\",\"key\":\"KEYPATH\"}}}"
+      ]
+    },
+    {
+      "name": "Python: Process Entities",
+      "type": "python",
+      "request": "launch",
+      "justMyCode": false,
+      "program": "${workspaceFolder}/datadragon_api.py",
+      "console": "internalConsole",
+      "args": [
+        "{\"command\": \"entity_process\", \"operations\": [{\"map\": \"iomap.heathcliff/io_entity/IOAppleSearchAdsEntityCommitter\", \"input\": {\"dry_run\": true, \"entity\": \"iocontext.entities.0\", \"credentials\": \"iocontext.credentials.ASATest\"}, \"output\": \"run.output\"}], \"entities\": [{\"granularity\": \"campaign\", \"id\": \"123\", \"update\": {\"daily_budget\": 10}}], \"credentials\": {\"ASATest\": {\"org_name\":\"CREDENTIALOBJECTID\",\"pem\":\"PEMPATH\",\"key\":\"KEYPATH\"}}}"
+      ]
+    },
+    {
+      "name": "Python: Single Source Report",
+      "type": "python",
+      "request": "launch",
+      "justMyCode": false,
+      "program": "${workspaceFolder}/datadragon_api.py",
+      "console": "internalConsole",
+      "args": [
+        "{ \"command\": \"report\", \"columns\": [\"campaign.id\", \"adgroup.id\", \"campaign.spend\", \"campaign.name\", \"adgroup.spend\", \"adgroup.name\", \"hourly.time\"], \"filters\": {\"start_date\": \"2020-05-01\", \"end_date\": \"2020-05-10\"}, \"options\": {\"time_granularity\": \"hourly\"}, \"credentials\": {\"client_secret\":\"CLIENTSECRET\",\"ad_account_id\":\"ADACCOUNTID\",\"client_id\":\"CLIENTID\",\"refresh_token\":\"REFRESHTOKEN\"}}"
+      ]
+    },
+    {
+      "name": "Python: Ad Groups",
+      "type": "python",
+      "request": "launch",
+      "justMyCode": false,
+      "program": "${workspaceFolder}/datadragon_api.py",
+      "console": "internalConsole",
+      "args": [
+        "{\"credentials\":{\"client_secret\":\"CLIENTSECRET\",\"ad_account_id\":\"ADACCOUNTID\",\"client_id\":\"CLIENTID\",\"refresh_token\":\"REFRESHTOKEN\"},\"accountName\":\"CREDENTIAL\",\"channel\":\"snapchat\",\"orgID\":\"ORGID\",\"campaignID\":\"CAMPAIGNID\",\"command\":\"adgroups\"}"
+      ]
+    },
+    {
+      "name": "Python: Campaigns",
+      "type": "python",
+      "request": "launch",
+      "justMyCode": false,
+      "program": "${workspaceFolder}/datadragon_api.py",
+      "console": "internalConsole",
+      "args": [
+        "{\"credentials\":{\"org_name\":\"CREDENTIALOBJECTID\",\"pem\":\"PEMPATH\",\"key\":\"KEYPATH\"},\"accountName\":\"CREDENTIAL\",\"channel\":\"apple_search_ads\",\"orgs\":[{\"id\":\"ORGID\",\"name\":\"ORGNAME\"}],\"command\":\"campaigns\"}"
+      ]
+    },
+    {
+      "name": "Python: Orgs",
+      "type": "python",
+      "request": "launch",
+      "justMyCode": false,
+      "program": "${workspaceFolder}/datadragon_api.py",
+      "console": "internalConsole",
+      "args": [
+        "{\"credentials\":{\"org_name\":\"CREDENTIALOBJECTID\",\"pem\":\"PEMPATH\",\"key\":\"KEYPATH\"},\"accountName\":\"CREDENTIAL\",\"channel\":\"apple_search_ads\",\"command\":\"orgs\"}"
+      ]
+    },
+    {
+      "name": "Python: API",
+      "type": "python",
+      "request": "launch",
+      "justMyCode": false,
+      "program": "${workspaceFolder}/datadragon_api.py",
+      "console": "internalConsole",
+      "args": [
+        "{\"command\":\"entity_process\",\"operations\":[{\"map\":\"iomap.io_map.util/IOMapEach\",\"construct\":{\"key_map\":\"iocontext.commit\"},\"input\":{\"items\":\"iocontext.entities\"},\"output\":\"run.output\"}],\"context\":{\"entities\":[{\"granularity\":\"campaign\",\"id\":\"CAMPAIGNID\",\"update\":{\"daily_budget\":5}}],\"commit\":{\"map\":\"iomap.heathcliff.io_entity/IOAppleSearchAdsEntityCommitter\",\"input\":{\"entity\":\"run.unmapped\",\"credentials\":\"iocontext.credentials.shared\",\"dry_run\":false}}},\"credentials\":{\"shared\":{\"org_name\":\"CREDENTIALOBJECTID\",\"pem\":\"PEMPATH\",\"key\":\"KEYPATH\"}}}"
+      ]
+    },
+    {
+      "name": "Python: CLI",
+      "type": "python",
+      "request": "launch",
+      "justMyCode": false,
+      "program": "${workspaceFolder}/datadragon.py",
+      "console": "integratedTerminal",
+      "args": [
+        "--use-the-force",
+        "script",
+        "input/scripts/set_adgroup_goals.py",
+        "live"
+      ]
+    }
+  ]
+}

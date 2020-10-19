@@ -1,0 +1,60 @@
+[
+  {
+    "update": "rules",
+    "updates": [
+      {
+        "q": { "shouldPerformAction": false, "isEnabled": true },
+        "u": {
+          "$set": {
+            "isEnabled": false
+          }
+        },
+        "multi": true
+      },
+      {
+        "q": {},
+        "u": {
+          "$set": {
+            "shouldPerformAction": false,
+            "options.use_dry_run_history": true
+          }
+        },
+        "multi": true
+      }
+    ] 
+  },
+  {
+    "delete": "rulesHistory",
+    "deletes": [
+      {
+        "q": { "dryRun": true },
+        "limit": 0
+      }
+    ] 
+  },
+  {
+    "update": "dragon",
+    "updates": [
+      {
+        "q": { "key": "dry_run_only" },
+        "u": {
+          "$setOnInsert": {
+            "dry_run_only": false
+          }
+        },
+        "upsert": true
+      },
+      {
+        "q": { "key": "dry_run_only", "dry_run_only": false },
+        "u": {
+          "$set": {
+            "dry_run_only": true
+          },
+          "$currentDate": {
+            "migrated": true
+          }
+        }
+      }
+    ] 
+  }
+]

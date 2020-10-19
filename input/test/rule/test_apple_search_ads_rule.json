@@ -1,0 +1,51 @@
+{
+  "account": "CREDENTIALPATH",
+  "adgroupID": 123,
+  "campaignID": 456,
+  "channel": "apple_search_ads",
+  "created": "2020-01-01T00:00:00.000Z",
+  "dataCheckRange": 604800000,
+  "granularity": "HOURLY",
+  "isEnabled": false,
+  "lastRun": "2020-01-02T00:00:00.000Z",
+  "lastTriggered": "2020-01-02T00:00:00.000Z",
+  "metadata": {
+    "accountName": "TESTACCOUNTNAME",
+    "actionDescription": "Spend > $0 → ☟ Bid 2% ⇥ $0.01",
+    "adGroupName": "TESTADGROUPNAME",
+    "campaignName": "TESTCAMPAIGNNAME",
+    "description": "TESTACCOUNTNAME (789) → TESTCAMPAIGNNAME → TESTADGROUPNAME | Spend > $0 → ☟ Bid 2% ⇥ $0.01 (every 1 hr review 168 hr)",
+    "title": "101112"
+  },
+  "modified": "2020-01-01T00:00:00.000Z",
+  "options": {},
+  "orgID": 789,
+  "runInterval": 3600000,
+  "safeMode": true,
+  "shouldMonitor": false,
+  "shouldPerformAction": true,
+  "shouldSendEmail": false,
+  "tasks": [
+    {
+      "actions": [
+        {
+          "action": "dec_bid",
+          "adjustmentLimit": 0.01,
+          "adjustmentValue": 2
+        }
+      ],
+      "conditionGroup": {
+        "conditions": [
+          {
+            "metric": "totalSpend",
+            "metricValue": 0,
+            "operator": "greater"
+          }
+        ],
+        "operator": "all",
+        "subgroups": []
+      }
+    }
+  ],
+  "user": "MONGOUSEROBJECTID"
+}

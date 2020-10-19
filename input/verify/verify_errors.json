@@ -1,0 +1,10 @@
+[
+  {
+    "find": "rulesHistory",
+    "filter": {
+      "historyCreationDate": { "$gt": "${p>v = datetime.datetime.fromisoformat('\"${f>start_date}\"') }" },
+      "historyType": { "$in": ["error", "failed"] }
+    },
+    "sort": { "ruleID": 1, "historyCreationDate": 1 }
+  }
+]

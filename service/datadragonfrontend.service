@@ -1,0 +1,12 @@
+[Unit]
+Description=DataDragonFrontEnd
+
+[Service]
+WorkingDirectory=/absolute/path/to/datadraangular-datadragon
+Restart=always
+ExecStart=/usr/bin/npm start
+User=projectuser
+Group=projectgroup
+
+[Install]
+WantedBy=multi-user.target

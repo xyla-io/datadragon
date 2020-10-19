@@ -1,0 +1,10 @@
+[
+  {
+    "find": "rulesHistory",
+    "filter": {
+      "historyCreationDate": { "$gt": "${p>v = datetime.datetime.utcnow() - datetime.timedelta(days=5)}" },
+      "historyType": { "$in": ["action", "error", "failed", "edited"] }
+    },
+    "sort": { "historyCreationDate": -1 }
+  }
+]

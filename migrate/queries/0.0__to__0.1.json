@@ -1,0 +1,45 @@
+[
+  {
+    "update": "rules",
+    "updates": [
+      {
+        "q": {},
+        "u": {
+          "$set": {
+            "safeMode": true,
+            "channel": "apple_search_ads"
+          }
+        },
+        "multi": true
+      }
+    ] 
+  },
+  {
+    "update": "rulesHistory",
+    "updates": [
+      {
+        "q": { "targetID": -1 },
+        "u": {
+          "$set": {
+            "consumedData": false
+          }
+        },
+        "multi": true
+      }
+    ] 
+  },
+  {
+    "update": "rulesHistory",
+    "updates": [
+      {
+        "q": { "targetID": {"$ne": -1} },
+        "u": {
+          "$set": {
+            "consumedData": true
+          }
+        },
+        "multi": true
+      }
+    ] 
+  }
+]

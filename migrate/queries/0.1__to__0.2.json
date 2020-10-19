@@ -1,0 +1,37 @@
+[
+  {
+    "update": "rulesHistory",
+    "updates": [
+      {
+        "q": {},
+        "u": {
+          "$set": {
+            "dryRun": false
+          }
+        },
+        "multi": true
+      }
+    ] 
+  },
+  {
+    "update": "dragon",
+    "updates": [
+      {
+        "q": { "key": "version" },
+        "u": { 
+          "key": "version",
+          "version": "0.2"
+        },
+        "upsert": true
+      },
+      {
+        "q": { "key": "version" },
+        "u": { 
+          "$currentDate": {
+            "migrated": true
+          }
+        }
+      }
+    ]
+  }
+]

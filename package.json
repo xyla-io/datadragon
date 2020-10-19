@@ -1,0 +1,88 @@
+{
+  "name": "datadragon",
+  "version": "0.0.1",
+  "description": "DataDragon active data analysis.",
+  "author": "Xyla",
+  "license": "MIT",
+  "repository": "github:xyla-io/datadragon",
+  "main": "app.js",
+  "scripts": {
+    "start": "rm -f crashlog/server.crashlog; nodemon app.js $npm_package_config_port $npm_package_config_host $npm_package_config_ssl $npm_package_config_site $npm_package_config_environment",
+    "serve": "http-server angular-datadragon/dist -P http://localhost:3300",
+    "postpack": "rm -f oclif.manifest.json",
+    "prepack": "oclif-dev manifest && oclif-dev readme",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "config": {
+    "port": 3300,
+    "host": "localhost",
+    "ssl": false,
+    "site": "http://localhost:4300",
+    "environment": "default"
+  },
+  "bin": {
+    "datadragonapi": "./bin/run"
+  },
+  "files": [
+    "/bin",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json",
+    "/commands"
+  ],
+  "oclif": {
+    "commands": "./commands",
+    "bin": "datadragonapi",
+    "plugins": [
+      "@oclif/plugin-help"
+    ],
+    "topics": {
+      "rule": {
+        "description": "Interact with Rules"
+      }
+    }
+  },
+  "dependencies": {
+    "@oclif/command": "^1.7.0",
+    "@oclif/config": "^1.16.0",
+    "@oclif/plugin-help": "^3.1.0",
+    "acl": "^0.4.11",
+    "bcrypt": "^3.0.0",
+    "body-parser": "~1.17.2",
+    "chalk": "^4.1.0",
+    "connect-mongo": "^2.0.0",
+    "cors": "~2.8.3",
+    "cron": "^1.2.1",
+    "csv": "^5.3.2",
+    "express": "~4.15.3",
+    "express-mung": "^0.5.1",
+    "express-session": "^1.15.6",
+    "formidable": "^1.1.1",
+    "http-server": "^0.11.1",
+    "itunesconnectanalytics": "^0.4.3",
+    "json-stable-stringify": "^1.0.1",
+    "jsonschema": "^1.2.2",
+    "mongoose": "~4.11.0",
+    "morgan": "^1.9.0",
+    "newrelic": "^2.9.1",
+    "nodemailer": "^4.1.0",
+    "nodemailer-markdown": "^1.0.2",
+    "nodemon": "^1.17.3",
+    "passport": "^0.4.0",
+    "passport-custom": "^1.1.1",
+    "passport-local": "^1.0.0",
+    "python-shell": "^0.4.0",
+    "q": "^1.5.1",
+    "r-script": "file:node/r-script",
+    "redis": "^3.0.2",
+    "rwlock": "^5.0.0",
+    "shell-quote": "^1.7.2",
+    "socket.io": "^2.3.0",
+    "typescript": "^2.5.2",
+    "unzip": "^0.1.11",
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.22.2",
+    "globby": "^11.0.1"
+  }
+}

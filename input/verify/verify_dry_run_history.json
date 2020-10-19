@@ -1,0 +1,20 @@
+[
+  {
+    "find": "dragon",
+    "filter": {
+      "key": "dry_run_only",
+      "dry_run_only": true
+    },
+    "projection": {
+      "migrated": true
+    }
+  },
+  {
+    "find": "rulesHistory",
+    "filter": {
+      "historyCreationDate": { "$gt": "${p>v = cursor.fetchone(item_index=0)['migrated']}" },
+      "historyType": { "$in": ["action", "error", "failed"] }
+    },
+    "sort": { "historyCreationDate": -1 }
+  }
+]

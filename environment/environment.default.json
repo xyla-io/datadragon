@@ -1,0 +1,45 @@
+{
+  "databases": {
+    "default": {
+      "user": "",
+      "password": "",
+      "schema": "mongodb",
+      "database": "datadragon",
+      "host": "localhost",
+      "port": 27017,
+      "connector_options": {}  
+    },
+    "stage": {
+      "user": "",
+      "password": "",
+      "schema": "mongodb",
+      "database": "datadragon",
+      "host": "STAGING_HOST",
+      "port": 27017,
+      "connector_options": {
+        "ssh_options": {
+          "user": "maru"
+        }
+      }  
+    },
+    "prod": {
+      "user": "",
+      "password": "",
+      "schema": "mongodb",
+      "database": "datadragon",
+      "host": "PROD_HOST",
+      "port": 27017,
+      "connector_options": {
+        "ssh_options": {
+          "user": "maru"
+        }
+      }  
+    }
+  },
+  "location": "alias://local",
+  "redis": {
+    "host": "127.0.0.1",
+    "port": 6379,
+    "auth": ""
+  }
+}

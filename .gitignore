@@ -1,0 +1,77 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+#
+package-lock.json
+
+# dependencies
+node_modules/
+
+# IDEs and editors
+/.idea
+.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Credentials
+/credentials/*
+!/credentials/README.md
+
+# SSL Certificates
+/ssl/*
+!/ssl/README.md
+
+# Crash Log
+/crashlog/server.crashlog
+
+# New Relic
+/newrelic_agent.log
+
+# Managed Files
+/files/*
+!/files/README.md
+!/files/users/
+/files/users/*
+!/files/users/README.md
+
+# Local Test Files
+/scripts/test/local_*.*
+
+# Local Output Files
+/output/**/*.*
+/output/**/.*
+/output/temp/*
+!/output/**/README.md
+/output/files/*
+
+# Local Configuration File
+/configure.json
+
+# R history
+.Rhistory
