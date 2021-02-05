@@ -3,7 +3,7 @@
 	url = git@github.com:xyla-io/regla.git
 [submodule "python/cheshire"]
 	path = python/cheshire
-	url = git@github.com:gklei/cheshire.git
+	url = git@github.com:xyla-io/cheshire.git
 [submodule "python/development_packages/hazel"]
 	path = python/development_packages/hazel
 	url = git@github.com:xyla-io/hazel.git
